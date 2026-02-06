@@ -1,9 +1,10 @@
+
 from flask import Flask, request, send_file
 import requests, time, os
 
 app = Flask(__name__)
 
-HF_TOKEN = "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"
+HF_TOKEN = os.getenv("HF_TOKEN")
 
 @app.route("/generate", methods=["POST"])
 def generate():
